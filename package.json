@@ -4,7 +4,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "npx ts-node-dev src/server.ts",
+    "serve": "npx nodemon src/server.ts",
     "seed": "npx ts-node prisma/seed.ts"
   },
   "dependencies": {
