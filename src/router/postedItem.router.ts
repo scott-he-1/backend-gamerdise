@@ -94,7 +94,7 @@ postedItemsController.delete(
           userId: true,
         },
       })
-      .then((item) => item.map((item) => item.userId));
+      .then((item: any) => item.map((item: any) => item.userId));
 
     await prisma.userToCartItems
       .deleteMany({
@@ -116,7 +116,7 @@ postedItemsController.delete(
           });
         }
       })
-      .catch((e) => console.error(e));
+      .catch((e: any) => console.error(e));
 
     await prisma.postedItem.delete({
       where: {

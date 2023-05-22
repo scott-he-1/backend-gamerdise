@@ -7,11 +7,12 @@ import { userController } from "./router/user.router";
 import { userToCartItemsController } from "./router/userToCartItems.router";
 import cors from "cors";
 
-["DATABASE_URL", "JWT_SECRET"].forEach((key) => {
+["DATABASE_URL", "JWT_SECRET", "PORT"].forEach((key) => {
   if (!process.env[key]) {
     throw new Error(`Missing environment variable ${key}`);
   }
 });
+const port = process.env["PORT"] || 3000;
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -25,4 +26,4 @@ app.use(postedItemsController);
 app.use(notificationController);
 app.use(userToCartItemsController);
 
-app.listen(3000, () => console.log(`Server is running on port 3000`));
+app.listen(port, () => console.log(`Server is running on port ${port}`));
