@@ -1,13 +1,19 @@
-1. Install dependencies using the command line.
+Welcome to the backend side of Gamerdise!
 
-npm i
+This is the deployed backend server for the E-commerce website Gamerdise
 
-2. Create a .env file with 2 variables at the root directory:
+Languages, tools and libraries used:
 
-DATABASE_URL="file:./dev.db"
+• TypeScript
 
-JWT_SECRET="YOURJWTSECRET"
+• Bcrypt
 
-3. Run the server using the command line
+• Express
 
-npm run serve
+• cors
+
+• Prisma
+
+• JSON Web Tokens (JWT)
+
+• Zod middleware
