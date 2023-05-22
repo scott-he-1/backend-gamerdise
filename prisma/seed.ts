@@ -114,7 +114,9 @@ const seed = async () => {
   });
 };
 
-seed()
-  .then(() => console.log("Seeding complete"))
-  .catch((e) => console.error(e))
-  .finally(async () => await prisma.$disconnect());
+export const seeder = () => {
+  seed()
+    .then(() => console.log("Seeding complete"))
+    .catch((e) => console.error(e))
+    .finally(async () => await prisma.$disconnect());
+};

@@ -6,6 +6,7 @@ import { postedItemsController } from "./router/postedItem.router";
 import { userController } from "./router/user.router";
 import { userToCartItemsController } from "./router/userToCartItems.router";
 import cors from "cors";
+import { seeder } from "../prisma/seed";
 
 ["DATABASE_URL", "JWT_SECRET", "PORT"].forEach((key) => {
   if (!process.env[key]) {
@@ -20,6 +21,11 @@ app.use(express.json());
 app.get("/", (req, res) => {
   return res.send("Hello");
 });
+
+app.post("/seeder", async (req, res) => {
+  return seeder();
+});
+
 app.use(authController);
 app.use(userController);
 app.use(postedItemsController);
